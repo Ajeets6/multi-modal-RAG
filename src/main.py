@@ -25,7 +25,7 @@ if prompt := st.chat_input("What is up?"):
     with st.chat_message("assistant"):
         if 'vectorstore' in locals() and vectorstore is not None:
             with st.spinner("Retrieving relevant information..."):
-                context = retrieve(prompt, vectorstore)
+                context= retrieve(prompt, vectorstore)
 
             with st.spinner("Generating answer..."):
                 answer = generate_answer(prompt, context)
