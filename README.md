@@ -1,0 +1,1 @@
+# Multimodal Local RAG using Ollama
