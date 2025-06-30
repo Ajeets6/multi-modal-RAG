@@ -5,7 +5,6 @@ def retrieve(query: str, vectorstore, k: int = 3):
     Retrieves relevant text chunks or image descriptions.
     """
     results = vectorstore.similarity_search(query, k=k)
-    # No need to check for images, just join the page_content
     context = "\n\n".join([doc.page_content for doc in results])
     return context
 
@@ -23,7 +22,7 @@ def generate_answer(query: str, context: str) -> str:
         user_content = query
 
     response = chat(
-        model="gemma3:latest", # Or your preferred final model
+        model="gemma3:latest",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_content}

@@ -14,9 +14,9 @@ def generate_image_description(image_path: str) -> str:
     Uses a vision model to generate a description of an image.
     """
     try:
-        # Use a dedicated vision model like Llava for description
+        
         response = chat(
-            model="gemma3:latest", # Or another powerful vision model
+            model="gemma3:latest", 
             messages=[
                 {
                     "role": "user",
